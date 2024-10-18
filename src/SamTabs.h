@@ -1,6 +1,10 @@
 #ifndef SAMTABS_H
 #define SAMTABS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 //tab40672
 unsigned char stressInputTable[] =
 {
@@ -212,4 +216,7 @@ SPECIAL
 
 */
 
+#ifdef __cplusplus
+}
+#endif
 #endif

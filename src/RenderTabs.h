@@ -1,6 +1,11 @@
 #ifndef RENDERTABS_H
 #define RENDERTABS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 unsigned char tab48426[5] = { 0x18, 0x1A, 0x17, 0x17, 0x17 };
 
 unsigned char tab47492[] = 
@@ -505,5 +510,9 @@ unsigned char sampleTable[0x500] =
 	,	 6 , 0xE0 , 7 , 0xE0 ,0xF , 0xF8 , 6 , 0xC1 
 	,  0xFE , 1 , 0xFC , 3 , 0xE0 ,0xF , 0 , 0xFC
 };
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

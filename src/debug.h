@@ -1,6 +1,10 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void PrintPhonemes(unsigned char *phonemeindex, unsigned char *phonemeLength, unsigned char *stress);
 void PrintOutput(
 	unsigned char *flag, 
@@ -13,5 +17,9 @@ void PrintOutput(
 	unsigned char *p);
 
 void PrintRule(unsigned short offset);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

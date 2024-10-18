@@ -1,6 +1,10 @@
 #ifndef RECITERTABS_H
 #define RECITERTABS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 //some flags
 unsigned char tab36376[] = 
 {
@@ -542,5 +546,10 @@ unsigned char tab37515[] =
 135, 136, 136, 137, 138, 139, 139, 140,
 140, 140
 };
+
+#ifdef __cplusplus
+}
+#endif
+
 
 #endif
