@@ -1,9 +1,10 @@
 OBJS = reciter.o sam.o render.o main.o debug.o processframes.o createtransitions.o
 
 CC = gcc
+#CC = clang
 
 # libsdl present
-CFLAGS =  -Wall -O2 -DUSESDL `sdl-config --cflags`
+CFLAGS =  -D__GNU_LIBRARY__ -Wall -O2 -DUSESDL `sdl-config --cflags`
 LFLAGS = `sdl-config --libs`
 
 # no libsdl present
