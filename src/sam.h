@@ -14,6 +14,7 @@ void SetThroat(unsigned char _throat);
 void EnableSingmode();
 
 int SAMMain();
+void SAMInit();
 
 char* GetBuffer();
 int GetBufferLength();

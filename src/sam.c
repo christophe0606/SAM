@@ -59,6 +59,7 @@ int GetBufferLength(){return bufferpos;};
 void Init();
 int Parser1();
 void Parser2();
+void SAMInit();
 int SAMMain();
 void CopyStress();
 void SetPhonemeLength();
@@ -74,8 +75,7 @@ void Init() {
 	SetMouthThroat( mouth, throat);
 
 	bufferpos = 0;
-	// TODO, check for free the memory, 10 seconds of output should be more than enough
-	buffer = malloc(22050*10); 
+	
 
 	for(i=0; i<256; i++) {
 		stress[i] = 0;
@@ -90,13 +90,20 @@ void Init() {
 	phonemeindex[255] = END; //to prevent buffer overflow // ML : changed from 32 to 255 to stop freezing with long inputs
 }
 
+void SAMInit()
+{
+    // TODO, check for free the memory, 10 seconds of output should be more than enough
+    buffer = malloc(22050*10); 
+
+   
+}
+
 int SAMMain() {
 	unsigned char X = 0; //!! is this intended like this?
 	Init();
     /* FIXME: At odds with assignment in Init() */
-	phonemeindex[255] = 32; //to prevent buffer overflow
-
-	if (!Parser1()) return 0;
+    phonemeindex[255] = 32; //to prevent buffer overflow
+    if (!Parser1()) return 0;
 	if (debug) PrintPhonemes(phonemeindex, phonemeLength, stress);
 	Parser2();
 	CopyStress();
